@@ -13,7 +13,11 @@
 ActiveRecord::Schema.define(version: 2021_08_03_162544) do
 
   create_table "anglers", force: :cascade do |t|
-    t.string "name"
+    t.string "email"
+    t.string "password_digest"
+    t.string "username"
+    t.string "uid"
+    t.string "provider"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -30,6 +34,8 @@ ActiveRecord::Schema.define(version: 2021_08_03_162544) do
 
   create_table "fish", force: :cascade do |t|
     t.string "species"
+    t.string "color"
+    t.float "weight"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
