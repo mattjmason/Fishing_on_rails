@@ -15,7 +15,15 @@ class FishController < ApplicationController
 
     end
     def create
-
+        @fish = Fish.new(fish_params)
+        if params[:location_id]
+            @location = Location.find_by_id(params[:location_id])
+        end
+        if fish.save 
+            redirect_to fish_index_path
+        else 
+            render :new
+        end
     end
 
     def edit 
@@ -27,5 +35,7 @@ class FishController < ApplicationController
 
 
     def destroy 
+        @fish.destroy 
+        redirect_to fish_index_path
     end
 end
