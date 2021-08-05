@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_03_162544) do
+ActiveRecord::Schema.define(version: 2021_08_05_042554) do
 
   create_table "anglers", force: :cascade do |t|
     t.string "email"
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 2021_08_03_162544) do
     t.float "weight"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "angler_id"
+    t.integer "location_id"
   end
 
   create_table "locations", force: :cascade do |t|

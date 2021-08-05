@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
         angler = Angler.find_by_email(params[:angler][:email])
         if angler.try(:authenticate, params[:angler][:password])
             session[:angler_id] = angler.id
-            redirect_to fish_path
+            redirect_to fish_index_path
         else
             flash[:message] = "Invalid credentials. Please try again. "
             redirect_to login_path
@@ -23,14 +23,14 @@ class SessionsController < ApplicationController
         if angler.valid? 
             session[:angler_id] = angler.id
             flash[:message] = "Successful Login!!"
-            redirect_to fish_path
+            redirect_to fish_index_path
         else
         end
     end
 
     def destroy 
         session.delete(:angler_id)
-        redirect_to fish_path
+        redirect_to fish_index_path
     end
 
     private 
