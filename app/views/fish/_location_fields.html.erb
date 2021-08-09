@@ -1,0 +1,6 @@
+<h3>Select an Already Existing Location:</h3>
+    <%= f.collection_select :location_id, Location.all, :id, :name %>
+    <h3>Create a Location: </h3>
+    <%= f.fields_for :location do |b| %>
+    <%= render partial: "location/form", locals: { f: b } %>
+    <% end %>
