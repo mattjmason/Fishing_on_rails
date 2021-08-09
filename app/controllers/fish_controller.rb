@@ -25,7 +25,7 @@ class FishController < ApplicationController
         if params[:location_id]
             @location = Location.find_by_id(params[:location_id])
         end
-        if fish.save 
+        if @fish.save 
             redirect_to fish_index_path
         else 
             render :new
