@@ -8,15 +8,24 @@ def index
 end
 
 def show 
+    @location = Location.find_by_id(params[:id])
 end 
 
 def new 
+    @location = Location.new
 end 
 
 def create 
+    @location = Location.new(location_params)
+    if @location.save 
+        redirect_to locations_path
+    else 
+        render :new
+    end
 end
 
 def edit
+    @location = Location.find_by_id(params[:id])
 end
 
 def update
@@ -29,12 +38,9 @@ end
 
 private 
 
-def fish_params 
-    params.require(:fish).permit(:species, :color, :weight, :location_id, location_attributes: [:city, :state])
-end
+def location_params 
+    params.require(:location).permit(:city, :state, fish_attributes: [:species, :color, :weight])
 
-def find_fish
-    @fish = Fish.find_by_id(params[:id])
 end
 
 end

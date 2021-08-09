@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+f = Location.create(city: 'Beach Haven', state: 'New Jersey')
+Fish.create([{location: f, species: 'Shark', color: 'grey', weight: 99.0 },
+{location: f, species: 'Flounder', color: 'brown', weight: 8.0},
+{location: f, species: 'Seabass', color: 'black', weight: 5.0}])

@@ -2,7 +2,7 @@ class Fish < ApplicationRecord
     belongs_to :angler 
     belongs_to :locations
     has_many :characteristics 
-    accepts_nested_attributes_for :location
+    accepts_nested_attributes_for :locations
 
     def location_attributes=(hash_of_attributes)
         if !hash_of_attributes["city"].blank? && !hash_of_attributes["state"].blank?

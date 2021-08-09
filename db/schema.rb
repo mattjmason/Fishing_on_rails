@@ -28,6 +28,9 @@ ActiveRecord::Schema.define(version: 2021_08_05_042554) do
   end
 
   create_table "characteristics", force: :cascade do |t|
+    t.string "water_temperature"
+    t.string "bait"
+    t.string "rod"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -43,6 +46,8 @@ ActiveRecord::Schema.define(version: 2021_08_05_042554) do
   end
 
   create_table "locations", force: :cascade do |t|
+    t.string "city"
+    t.string "state"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
