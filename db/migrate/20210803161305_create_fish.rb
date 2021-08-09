@@ -4,8 +4,7 @@ class CreateFish < ActiveRecord::Migration[6.1]
       t.string :species
       t.string :color 
       t.float :weight 
-      
-
+    
       t.timestamps
     end
   end
